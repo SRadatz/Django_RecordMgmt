@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <base href="">
+  <link rel="stylesheet" type="text/css" href="./css/desktop.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- CSS reference for Social Media links -->
+  <title>Edit Grant Status</title>
+  <style>
+  /* Proj global css */
+  * {
+    box-sizing: border-box;
+    font-family: Verdana, Tahoma, "Trebuchet MS", "DejuVu Sans", "Bitstream Vera Sans", sans-serif;
+  }
+
+  body { /* global color and margin */
+    background: #d9d9d9;
+    margin: 0;
+    overflow: auto;
+  }
+
+  a { /* removing global link decoration  */
+    text-decoration: none;
+    color: #000;
+  }
+
+  .content { /* reusable content tag */
+    display: block;
+    padding: 1px 0px 1px 16px;
+    margin-left: 150px;
+  }
+
+  .content img { /* Pic on index */
+    padding: 5px;
+    float: right;
+    width: 20%;
+    border-radius: 20%;
+    min-width: 128px;
+  }
+
+  /* Course.html Page */
+  .course {
+    display: inline-block;
+    padding: 0px 15px;
+    border-bottom-style: solid;
+    width: calc(100% - 150px);
+    border-color: #9999ff;
+    background: #d9d9d9;
+    margin-left: 150px;
+  }
+  /* Courses Page */
+
+  /* Project.html */
+  .ProjSec {
+    display: block;
+    padding: 1px 8px;
+    height: 1200px;
+    margin-left: 150px;
+  }
+
+  .ProjSec img {
+    display: block;
+    width: 10%;
+  }
+
+  /* End Project */
+
+  /* Links.html */
+  .linkContent {
+    display: inline;
+    margin-left: 150px;
+    text-align: center;
+  }
+
+  .linkContainer {
+    margin-left: 150px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    background-color: #d9d9d9;
+    padding: 10px;
+  }
+
+  .LGrid {
+    background-color: #d9ccff;
+    border: 1px solid #000;
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+  }
+  /* End Links */
+
+  /*Hobby.html */
+
+  .hobbyContent {
+    display: block;
+    padding: 1px 0px 1px 16px;
+    margin-left: 150px;
+    height: auto;
+    text-align: center;
+  }
+
+  .travel img {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+  }
+
+  .snowboard img {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+  }
+
+  .bike img {
+    margin-left: 150px;
+    width: calc(100% - 150px);
+  }
+
+  .picText {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 5em;
+    color: #9999ff;
+  }
+
+  .sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: #d9d9d9;
+    top: 0;
+    margin-left: 150px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+  }
+  /* End Hobbies */
+  /* Contact.html */
+
+  fieldset {
+    margin: 10px 10px 10px 160px;
+  }
+
+  .gridContainer {
+    position: relative;
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+  }
+
+  .gridLabel {
+    text-align: right;
+  }
+
+  .gridItem input[type='reset'] {
+    padding: 5px;
+  }
+
+  .gridLabel input[type='submit'] {
+    padding: 5px;
+  }
+
+  .parallax {
+    background: url(../img/contact_img.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 850px;
+    background-attachment: fixed;
+    width: 100%;
+  }
+
+  .location {
+    text-align: right;
+    position: relative;
+    margin-right: 10px;
+    bottom: 0;
+  }
+
+  /* End Contacts */
+
+  /* Global Footer */
+  footer {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    background-color: #000;
+    width: calc(100% - 150px);
+    margin-left: 150px;
+    height: auto;
+    justify-content: flex-end;
+  }
+
+  .LinkFoot { /* Login page footer, no need for relative positing since there is no scrolling */
+    position: absolute;
+    bottom: 0;
+  }
+
+  .loginFoot { /* Login page footer, no need for relative positing since there is no scrolling */
+    position: absolute;
+    bottom: 0;
+  }
+  /* Social Links */
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-decoration: none;
+  }
+
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  /* End Social Links */
+  /* End Footer */
+
+  /* Login.html Page */
+
+  .loginBox {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-43%, -45%);
+  }
+
+  .loginForm {
+    font-size: 18px;
+    background: #fff;
+    padding: 10px;
+    border-style: solid;
+    border-width: 2px;
+    width: 320px;
+
+  }
+
+  .loginForm * {
+    margin: 5px;
+  }
+
+  .loginForm input[type='text'], input[type='password'] {
+    border: none;
+    border-bottom: 1px solid;
+    margin-bottom: 5px;
+    outline: none;
+    width: 95%;
+  }
+
+  .loginForm input[type='submit'], input[type='reset'] {
+    padding: 5px 8px;
+  }
+
+  /* End Login Page*/
+
+  /* Global NAV BAR */
+  nav {
+    background-color: #9999ff;
+    height: 100%;
+    position: fixed;
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 16px;
+    display: block;
+  }
+
+  nav a.active {
+    background-color: #000;
+    color: #9999ff;
+  }
+
+  nav a:hover:not(.active) {
+    background-color: #333;
+    color: #9999ff;
+  }
+
+  /* END NAV BAR */
+
+  /* Medium Responsive changes (mostly removing left margin)*/
+  @media screen and (max-width: 1200px) {
+    nav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    fieldset {
+      margin-left: 10px;
+    }
+
+    footer {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    nav a {
+      float: left;
+    }
+
+    .loginBox {
+      top: 25%;
+    }
+
+    .linkContent {
+      margin-left: 0px;
+    }
+
+    .linkContainer {
+      margin: auto auto;
+    }
+
+    .gridContainer {
+      margin-left: 0px;
+    }
+
+    .travel img {
+      margin-left: 0px;
+      width: 100%;
+    }
+
+    .snowboard img {
+      margin-left: 0px;
+      width: 100%;
+    }
+
+    .bike img {
+      margin-left: 0px;
+      width: 100%;
+    }
+
+    .picText {
+      position: absolute;
+      top: 48px;
+    }
+
+    .sticky {
+      margin-left: 0;
+    }
+
+    .content {
+      margin-left: 0;
+    }
+    .ProjSec {
+      margin-left: 0;
+      margin: 1px 10px;
+    }
+    .course {
+      margin-left: 0;
+      width: 100%;
+    }
+    .hobbyContent {
+      margin-left: 0;
+  }
+
+  /* Phone Responsive changes */
+  @media screen and (max-width: 700px) {
+    nav {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    nav a {
+      text-align: center;
+      display: block;
+      width: 100%
+    }
+
+    .loginBox {
+      top: 50%;
+      left: 50%;
+    }
+
+    .picText{
+      top: 36%;
+    }
+  }
+}
+  </style>
+</head>
+
+<body>
+  <nav> <!-- Navigation Bar -->
+    <a href="http://localhost:8000/">Home</a>
+    <a href="http://localhost:8000/Auditor_home">Auditors</a>
+    <a href="http://localhost:8000/manager_home">Managers</a>
+    <a href="http://localhost:8000/organization_home">Org Info</a>
+    <a href="http://localhost:8000/grantee_home">Grantee</a>
+    <a href="http://localhost:8000/status_home">Grant Status</a>
+    <a class = 'active' href="http://localhost:8000/mydb/">Grants</a>
+    <a href="http://localhost:8000/employee/">Employee</a>
+    <a href="http://localhost:8000/login/">Login</a>
+  </nav>
+
+  <article> <!-- Title info -->
+    <div class="content">
+      <h1 style="text-align: center;">Edit a Grant Status</h1>
+  </article>
+
+  <fieldset> <!-- Grid Container for all form items -->
+    <legend>Status Edit</legend>
+    <form action="{% url 'status_edit_conf' %}">
+      <div class="gridContainer">
+
+        <div class="gridLabel">
+          <label>Status ID:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="status_id" rows="1">{{object_instance.status_id}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>Applied:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="applied" rows="1">{{object_instance.applied}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>Letter of Intent:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="loi" rows="1">{{object_instance.loi}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>Review:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="review" rows="1">{{object_instance.review}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>Approved:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="approved" rows="1">{{object_instance.approved}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>active:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="active" rows="1">{{object_instance.active}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>Archived:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="archived" rows="1">{{object_instance.archived}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <label>Grant ID:</label>
+        </div>
+
+        <div class="gridItem">
+          <textarea name="grant_grant" rows="1">{{object_instance.grant_grant}}</textarea>
+        </div>
+
+        <div class="gridLabel">
+          <input type="submit" name="send" value="  Submit  "> <!-- Onclick calls script on the bottom -->
+        </div>
+
+        <div class="gridItem">
+          <input type="reset" name="reset" value="  Reset  ">
+        </div>
+
+      </div>
+    </form>
+  </fieldset>
+
+</body>
+</html>
